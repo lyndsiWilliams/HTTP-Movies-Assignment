@@ -22,18 +22,27 @@ const UpdateForm = props => {
   }, [props.movies, props.match.params.id]);
 
   const handleChange = ev => {
-    ev.preventDefault();
-
-    setMovie({ ...movie, [ev.target.name]: ev.target.value });
+    if(ev.target.name === 'stars') {
+      let starsArr = ev.target.value.split(', ')
+      setMovie(
+        {...movie, [ev.target.name]: starsArr}
+      )
+    } else {
+      setMovie(
+        {...movie, [ev.target.name]: ev.target.value}
+      )
+    }
   };
 
   const handleSubmit = ev => {
     ev.preventDefault();
-
     axios
       .put(`http://localhost:5000/api/movies/${movie.id}`, movie)
-      .then(res => console.log(res))
-      .catch(err => console.log(err));
+      .then(res => {
+        props.updateMovies(res.data)
+        props.history.push(`/movies/${movie.id}`)
+      })
+      .catch(err => console.log(err))
   };
 
   return (
