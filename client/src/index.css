@@ -40,6 +40,10 @@ body {
   margin-right: 10px;
 }
 
+.saved-list-buttons {
+  display: flex;
+}
+
 .saved-movie {
   margin: 0 10px;
 }
@@ -61,13 +65,44 @@ body {
   padding: 5px 10px;
   background-color: lightseagreen;
 }
+.edit-button:hover {
+  background-color: green;
+  color: white;
+}
+.edit-button {
+  position: absolute;
+  top: 60px;
+  right: 25px;
+  border: 1px solid grey;
+  padding: 5px 10px;
+  background-color: lightseagreen;
+}
+.delete-button:hover {
+  background-color: green;
+  color: white;
+}
+.delete-button {
+  position: absolute;
+  top: 95px;
+  right: 25px;
+  border: 1px solid grey;
+  padding: 5px 10px;
+  background-color: lightseagreen;
+}
 .save-button:hover {
   background-color: green;
   color: white;
 }
 
 .home-button {
+  padding: 15px 10px;
+  background-color: lightskyblue;
+  margin-left: 1%;
+}
+
+.add-button {
   padding: 5px 10px;
+  text-align: center;
   background-color: lightskyblue;
 }
 
